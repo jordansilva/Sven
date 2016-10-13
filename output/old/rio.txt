@@ -1,0 +1,53 @@
+Checkins:		458814
+Unique Users:		17609
+Unique Places:		37234
+
+# TOP 10 Places Checkins
+6209 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+4373 Aeroporto do Rio de Janeiro / Santos Dumont (SDU)
+3853 Smart Fit
+3661 McDonald's
+2568 Universidade Estácio de Sá
+2535 Campo Grande
+2482 BarraShopping
+2430 Copacabana Beach
+2409 Rio de Janeiro
+2358 Universidade Veiga de Almeida (UVA)
+
+# TOP 10 Users Checkins
+6515 https://foursquare.com/romulosreis
+2370 https://foursquare.com/porrafoto
+1955 https://foursquare.com/clauciporibe
+1853 https://foursquare.com/zeccasilva
+1824 https://foursquare.com/assinyr
+1775 https://foursquare.com/pablovsk
+1713 https://foursquare.com/izabelamayara
+1694 https://foursquare.com/cernadasg
+1626 https://foursquare.com/saraivagbr
+1609 https://foursquare.com/sandrarsr
+
+# Most Checked Places by Time
+00H - 305 McDonald's
+01H - 180 Arcos da Lapa
+02H - 279 Barra Music
+03H - 184 Barra Music
+04H - 72 Arcos da Lapa
+05H - 43 Arcos da Lapa
+06H - 50 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+07H - 116 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+08H - 249 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+09H - 424 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+10H - 448 Colégio Quintanilha
+11H - 433 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+12H - 324 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+13H - 287 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+14H - 292 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+15H - 314 McDonald's
+16H - 358 McDonald's
+17H - 312 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+18H - 311 Mário Filho (Maracanã) Stadium
+19H - 279 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)
+20H - 340 Smart Fit
+21H - 377 Smart Fit
+22H - 456 Universidade Estácio de Sá
+23H - 404 Aeroporto Internacional do Rio de Janeiro / Galeão (GIG)

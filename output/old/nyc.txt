@@ -1,0 +1,53 @@
+Checkins:		523259
+Unique Users:		26550
+Unique Places:		47667
+
+# TOP 10 Places Checkins
+13327 John F. Kennedy International Airport (JFK)
+7816 Starbucks
+6927 LaGuardia Airport (LGA)
+4746 Times Square
+3491 New York Penn Station
+2976 Central Park
+2430 Grand Central Terminal
+2408 Madison Square Garden
+2080 Citi Field
+1820 Shake Shack
+
+# TOP 10 Users Checkins
+8542 https://foursquare.com/p_loca
+6314 https://foursquare.com/teshawnedmonds
+6083 https://foursquare.com/jasonbxny0619
+5344 https://foursquare.com/rocknrebl87
+3538 https://foursquare.com/fwankyboi
+3122 https://foursquare.com/filicky
+2318 https://foursquare.com/seanmfranklin
+2291 https://foursquare.com/_blackdiamond42
+1972 https://foursquare.com/joeynumb69
+1729 https://foursquare.com/jetzgretz
+
+# Most Checked Places by Time
+00H - 708 John F. Kennedy International Airport (JFK)
+01H - 609 John F. Kennedy International Airport (JFK)
+02H - 568 John F. Kennedy International Airport (JFK)
+03H - 454 John F. Kennedy International Airport (JFK)
+04H - 302 John F. Kennedy International Airport (JFK)
+05H - 137 John F. Kennedy International Airport (JFK)
+06H - 63 Times Square
+07H - 42 John F. Kennedy International Airport (JFK)
+08H - 112 John F. Kennedy International Airport (JFK)
+09H - 432 John F. Kennedy International Airport (JFK)
+10H - 755 John F. Kennedy International Airport (JFK)
+11H - 770 John F. Kennedy International Airport (JFK)
+12H - 765 Starbucks
+13H - 819 Starbucks
+14H - 641 Starbucks
+15H - 559 Starbucks
+16H - 551 Starbucks
+17H - 616 John F. Kennedy International Airport (JFK)
+18H - 794 John F. Kennedy International Airport (JFK)
+19H - 784 John F. Kennedy International Airport (JFK)
+20H - 902 John F. Kennedy International Airport (JFK)
+21H - 945 John F. Kennedy International Airport (JFK)
+22H - 772 John F. Kennedy International Airport (JFK)
+23H - 840 John F. Kennedy International Airport (JFK)

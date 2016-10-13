@@ -1,0 +1,53 @@
+Checkins:			393881
+Unique Users:		4861
+Unique Places:		33654
+
+# TOP 10 Places Checkins
+4672 Belo Horizonte
+1769 Estádio Governador Magalhães Pinto (Mineirão)
+1626 Estádio Raimundo Sampaio (Arena Independência)
+1617 Centro
+1514 Centro Universitário UNA
+1500 Subway
+1381 Smart Fit
+1321 Savassi
+1269 PUC Minas
+1262 Pampulha
+
+# TOP 10 Users Checkins
+9370 https://foursquare.com/muitomais232
+5361 https://foursquare.com/smartfx1980
+4441 https://foursquare.com/leoosoares1
+4265 https://foursquare.com/georgewvieira
+4148 https://foursquare.com/johandamatta
+3848 https://foursquare.com/priv8l
+3763 https://foursquare.com/diogoar
+3575 https://foursquare.com/icpn
+3511 https://foursquare.com/jobscaldeira
+3302 https://foursquare.com/alvinogt29
+
+# Most Checked Places by Time
+00H - 213 Belo Horizonte
+01H - 163 Belo Horizonte
+02H - 149 Belo Horizonte
+03H - 66 Belo Horizonte
+04H - 33 Belo Horizonte
+05H - 21 Belo Horizonte
+06H - 18 Belo Horizonte
+07H - 26 Belo Horizonte
+08H - 64 Belo Horizonte
+09H - 203 Belo Horizonte
+10H - 329 Belo Horizonte
+11H - 340 Belo Horizonte
+12H - 292 Belo Horizonte
+13H - 250 Belo Horizonte
+14H - 330 Belo Horizonte
+15H - 352 Belo Horizonte
+16H - 252 Belo Horizonte
+17H - 238 Belo Horizonte
+18H - 238 Estádio Governador Magalhães Pinto (Mineirão)
+19H - 208 Belo Horizonte
+20H - 236 Belo Horizonte
+21H - 309 Centro Universitário UNA
+22H - 307 Centro Universitário UNA
+23H - 244 Estádio Raimundo Sampaio (Arena Independência)
