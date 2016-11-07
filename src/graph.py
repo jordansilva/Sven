@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import numpy as np
-from matplotlib.backends.backend_pdf import PdfPages
 import itertools
 import matplotlib.pyplot as plt
 import seaborn as sns
+from matplotlib.backends.backend_pdf import PdfPages
 
 # @Author: @jordansilva
 # @Date: September 06, 2016
@@ -21,7 +21,10 @@ dpi = 100
 
 def graph(x, y, title, x_label=None, y_label=None, x_ticks=None,
           y_ticks=None, grid=True, legend=None, filename=None,
-          y_lim=None, x_lim=None):
+          x_ticks_space=None, y_ticks_space=None,
+          y_lim=None, x_lim=None,
+          inverse_axis=False,
+          axis_percent_y=False, axis_percent_x=False):
 
     sns.set_style("whitegrid")
     # plt.rcParams.update({'xtick.labelsize': 8, 'ytick.labelsize': 8})
@@ -52,18 +55,33 @@ def graph(x, y, title, x_label=None, y_label=None, x_ticks=None,
         plt.xlabel(x_label)
 
     # Ticks
-    if x_ticks:
+    if x_ticks is not None:
         plt.xticks(range(1, len(x_ticks)+1), x_ticks)
 
-    if y_ticks:
-        plt.y_ticks(range(1, len(y_ticks)+1), y_ticks)
+    if y_ticks is not None:
+        plt.yticks(range(1, len(y_ticks)+1), y_ticks)
 
     axes = plt.gca()
+
+    if x_ticks_space is not None:
+        plt.xticks(np.arange(0, x_lim+1, x_ticks_space))
+    elif x_lim:
+        axes.set_xlim(x_lim)
+
+    if y_ticks_space is not None:
+        plt.yticks(np.arange(0, y_lim+1, y_ticks_space))
+    
     if y_lim:
         axes.set_ylim(y_lim)
-    if x_lim:
-        axes.set_xlim(x_lim)
     
+    if axis_percent_y:
+        axes.set_yticklabels(['{:.0f}%'.format(ticks*100) for ticks in axes.get_yticks()])
+    if axis_percent_x:
+        axes.set_xticklabels(['{:.0f}%'.format(ticks*100) for ticks in axes.get_xticks()])
+
+    if inverse_axis:
+        axes.invert_yaxis()
+        axes.invert_xaxis()
 
     # Legend
     if legend:

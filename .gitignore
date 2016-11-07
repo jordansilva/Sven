@@ -6,6 +6,17 @@ __pycache__/
 # C extensions
 *.so
 
+# Mac
+.DS_Store/
+.DS_Store
+
+# Folders
+output/
+output-swarm/
+
+# Gzip
+*.gz
+
 # Distribution / packaging
 .Python
 env/

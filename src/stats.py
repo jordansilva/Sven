@@ -61,20 +61,23 @@ def generate_stats(filename):
 
 
 def generate_graphs():
-    # Users & Venues by Fold
+    print('Distribution candidates by check-ins')
+    distribution_candidates_checkins_graph()
+
+    return
     print('Users and Places by Fold')
     users_places_fold(training, validation, test)
 
     print('Train Validation and Test Folds')
     train_test_fold(training, validation, test)
 
+    print('Categories check-ins per time')
+    most_checked_categories_timerange_graph()
+
     print('Distribution Check-ins Time Graph')
     dbs = ['kunkka-rio', 'kunkka-nyc', 'kunkka']
     labels = ['Rio de Janeiro', 'New York', 'Belo Horizonte']
     distribution_checkins_time_graph(dbs, labels)
-
-    print('Categories check-ins per time')
-    most_checked_categories_timerange_graph()
     return
 
 
@@ -92,7 +95,7 @@ if __name__ == '__main__':
     database = sys.argv[1]
 
     print "\n##### Stats #####"
-    init('host07', database)
+    init('host07', database, 'jordan', '058414')
 
     # unique city
     # print('Generating stats')

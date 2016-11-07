@@ -48,7 +48,7 @@ print('Collection: %s' % venues_db)
 print('Output: %s' % filename)
 
 client = MongoClient(host='150.164.2.168')
-db = client['kunkka']
+db = client['kunkka-nyc']
 db.authenticate('jordan', '058414', source='admin')
 
 #start, destination, candidates
@@ -63,8 +63,11 @@ colors = [['#EF9A9A', '#B71C1C', '#D50000'],
           ]
 colors = itertools.cycle(colors)
 
-# gmap = gmplot.GoogleMapPlotter(40.7128, -74.0059, 12)
-gmap = gmplot.GoogleMapPlotter(-19.9196016, -43.9484139, 12)
+# BH
+# gmap = gmplot.GoogleMapPlotter(-19.9196016, -43.9484139, 10)
+
+# NYC
+gmap = gmplot.GoogleMapPlotter(40.7128, -74.0059, 10)
 
 result = db['checkins'].find().limit(num_samples)
 for item in result:
@@ -86,7 +89,7 @@ for item in result:
     point_lat.append(p_lat)
     point_lon.append(p_lon)
     item['point'] = [p_lon, p_lat]
-
+    
     cand = item['venue']
     geo = {'type': 'Point', 'coordinates': item['point']}
     result2 = db[venues_db].find({'point': {'$near': 

@@ -3,6 +3,7 @@
 import sys
 import graph
 import json
+import numpy as np
 from pymongo import MongoClient
 from datetime import datetime
 
@@ -22,10 +23,13 @@ from datetime import datetime
 
 
 # Initialize Database
-def init(host, database):
+def init(host, database, username=None, password=None):
     global client, db
     client = MongoClient(host)
     db = client[database]
+    if (username and password):
+        db.authenticate(username, password, source='admin')
+
     return
 
 
@@ -92,6 +96,38 @@ def most_checked_categories_timerange():
         items.sort(key=lambda tup: tup[0])
 
         db['cache'].insert({'query': 'most_checked_categories_timerange',
+                            'result': json.dumps(items)})
+    else:
+        items = json.loads(result[0]['result'])
+
+    return items
+
+
+def distribution_candidates_checkins():
+    result = db['cache'].find({'query': 'distribution_candidates_checkins'})
+    if result.count() == 0:
+        result = db['checkins'].aggregate([{'$project': { 
+                                            'rank1': {'$size':"$cand_checked"}, 
+                                            'rank2': {'$size':"$cand_all"}
+                                            }}])
+
+        items = {}
+        items['rank1'] = {}
+        items['rank2'] = {}
+        for r in result:
+            r1 = r['rank1']
+            r2 = r['rank2']
+
+            if r1 not in items['rank1']:
+                items['rank1'][r1] = 0
+
+            if r2 not in items['rank2']:
+                items['rank2'][r2] = 0
+
+            items['rank1'][r1] += 1
+            items['rank2'][r2] += 1
+
+        db['cache'].insert({'query': 'distribution_candidates_checkins',
                             'result': json.dumps(items)})
     else:
         items = json.loads(result[0]['result'])
@@ -337,6 +373,112 @@ def users_places_fold(train_data, validation_data, test_data):
                 legend=legend, filename='training-users-venues-fold')
 
     return
+
+
+def distribution_candidates_checkins_graph():
+    distribution_candidates_checkins_1_graph()
+    distribution_candidates_checkins_2_graph()
+    return
+
+def distribution_candidates_checkins_1_graph():
+    labels = ['Checked POIs', 'All POIs']
+
+    result = distribution_candidates_checkins()
+    # candidates, num_checkins
+    rank1 = []
+    for r in result['rank1']:
+        rank1.append((int(r), int(result['rank1'][r])))
+    rank1.sort(key=lambda tup: tup[0])
+
+    rank2= []
+    for r in result['rank2']:
+        rank2.append((int(r), int(result['rank2'][r])))
+    rank2.sort(key=lambda tup: tup[0])
+
+    x1 = []
+    y1 = []
+    for key, count in rank1:
+        y1.append(count)
+        x1.append(key)
+
+    x2 = []
+    y2 = []
+    for key, count in rank2:
+        y2.append(count)
+        x2.append(key)
+    
+    cumsum = np.cumsum(y1)
+    max_cumsum = max(cumsum)*1.0
+    cumsum1 = np.divide(cumsum, max_cumsum)
+    
+    cumsum = np.cumsum(y2)
+    max_cumsum = max(cumsum)*1.0
+    cumsum2 = np.divide(cumsum, max_cumsum)
+
+    Y = [ cumsum1, cumsum2 ]
+    X = [ x1, x2 ]
+
+
+    x_lim = max(max(x1), max(x2))
+    
+    # n = len(Y[0])
+    # X = [list(range(1, n+1))] * len(Y)
+
+    graph.graph(x=X, y=Y, title='Distribution of Candidates per Checkin',
+                x_label='# Candidates', y_label='# Check-ins',
+                x_ticks_space=250, x_lim=x_lim+100,
+                axis_percent_y=True,
+                legend=labels, filename='distribution_candidates_checkins_1')
+
+    return
+
+
+
+def distribution_candidates_checkins_2_graph():
+    labels = ['Checked POIs', 'All POIs']
+
+    result = distribution_candidates_checkins()
+    # candidates, num_checkins
+    rank1 = []
+    for r in result['rank1']:
+        rank1.append((int(r), int(result['rank1'][r])))
+    rank1.sort(key=lambda tup: tup[0])
+
+    rank2= []
+    for r in result['rank2']:
+        rank2.append((int(r), int(result['rank2'][r])))
+    rank2.sort(key=lambda tup: tup[0])
+
+    x1 = []
+    y1 = []
+    for key, count in rank1:
+        y1.append(count)
+        x1.append(key)
+
+    x2 = []
+    y2 = []
+    for key, count in rank2:
+        y2.append(count)
+        x2.append(key)
+    
+    cumsum1 = np.dot(np.cumsum(y1), -1)
+    cumsum2 = np.dot(np.cumsum(y2), -1)
+
+    Y = [ cumsum1, cumsum2 ]
+    X = [ x1, x2 ]
+
+    x_lim = max(max(x1), max(x2))
+    
+    # n = len(Y[0])
+    # X = [list(range(1, n+1))] * len(Y)
+
+    graph.graph(x=X, y=Y, title='Distribution of Candidates per Checkin',
+                x_label='# Candidates', y_label='# Check-ins',
+                x_ticks_space=250, x_lim=x_lim+100,
+                legend=labels, filename='distribution_candidates_checkins_2')
+
+    return
+
 
 
 def distribution_checkins_time_graph(databases, labels):

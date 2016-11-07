@@ -1,9 +1,35 @@
+import sys
 import gmplot
 import itertools
 from pymongo import MongoClient
 
+
+if len(sys.argv) < 4:
+    print("Illegal number of parameters")
+    print("map.py <city> <num checkins> <all|checked>")
+    exit(1)
+
+db_arg = sys.argv[1].lower()
+db_name = 'kunkka'
+if db_arg == 'bh':
+    db_name = 'kunkka'
+    city_coord = [-19.9196016, -43.9484139]
+elif db_arg == 'nyc':
+    db_name = 'kunkka-nyc'
+    city_coord = [40.7128, -74.0059]
+else:
+    print("Invalid database!")
+    exit(1)
+
+num_samples = eval(sys.argv[2])
+venues_arg = sys.argv[3].lower()
+venues_db = 'venues-all' if (venues_arg == 'all') else 'venues'
+venues_attr = 'cand_all' if (venues_arg == 'all') else 'cand_checked'
+filename = "%s-%s-%s.html" % (db_arg, str(num_samples), venues_arg)
+
 client = MongoClient(host='150.164.2.168')
-db = client['kunkka-nyc']
+db = client[db_name]
+db.authenticate('jordan', '058414', source='admin')
 
 #start, destination, candidates
 colors = [['#EF9A9A', '#B71C1C', '#D50000'],
@@ -17,9 +43,10 @@ colors = [['#EF9A9A', '#B71C1C', '#D50000'],
           ]
 colors = itertools.cycle(colors)
 
-gmap = gmplot.GoogleMapPlotter(40.7128, -74.0059, 10)
+gmap = gmplot.GoogleMapPlotter(city_coord[0], city_coord[1], 10)
 
-result = db['checkins'].find().skip(50000).limit(6)
+result = db['checkins'].find().skip(10).limit(num_samples)
+
 for item in result:
     point_lat = []
     point_lon = []
@@ -31,25 +58,27 @@ for item in result:
     point_lat.append(item['point'][1])
     point_lon.append(item['point'][0])
 
-    venue = db['venues-all'].find_one({'uid': item['venue']})
+    venue = db['venues'].find_one({'uid': item['venue']})
     rel_lat.append(venue['point'][1])
     rel_lon.append(venue['point'][0])
 
     max_dist = 5000
     limit = 499
     cand = item['venue']
-    
-    result2 = db['venues'].find({'uid': {'$in': item['cand_checked']}})
+
+    result2 = db[venues_db].find({'uid': {'$in': item[venues_attr]}})
     for item2 in result2:
+        if (item2['uid'] == item['venue']):
+            continue
         latitudes.append(item2['point'][1])
         longitudes.append(item2['point'][0])
 
     result2.close()
 
     color = next(colors)
-    gmap.scatter(point_lat, point_lon, color=color[0], size=5000, marker=False)
-    gmap.scatter(point_lat, point_lon, color=color[1], marker=True)
-    gmap.scatter(rel_lat, rel_lon, color=color[2], marker=True)
+    gmap.scatter(point_lat, point_lon, color=color[0], size=500, marker=False)
+    gmap.marker(lat=point_lat[0], lng=point_lon[0], color=color[1], title=item['id'])
+    gmap.marker(lat=rel_lat[0], lng=rel_lon[0], color=color[2], title=item['id'])
     gmap.scatter(latitudes, longitudes, color[2], size=80, marker=False)
 result.close()
 
@@ -68,4 +97,4 @@ result.close()
 # gmap.scatter(point_lat, point_lon, 'b', marker=True)
 # gmap.heatmap(latitudes, longitudes)
 
-gmap.draw("mymap-checked.html")
+gmap.draw(filename)
