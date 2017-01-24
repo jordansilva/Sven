@@ -17,7 +17,7 @@
  - [x] Chapter Introduction
  - [ ] 3.1 Check-ins Dataset (talk about 4sq)
  - [x] 3.1.1 Twitter
- - [ ] 3.1.2 Swarm
+ - [x] 3.1.2 Swarm
  - [ ] 3.1.3 Architeture & Tools
  - [ ] 3.2 Data Extension
  - [ ] 3.2.1 Place Collection
