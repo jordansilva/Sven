@@ -1,3 +1,8 @@
+**Contributions & Differential?**
+- [x] A big new collection of POI check-ins, with POIs information, and real check-ins. (Freshly) 
+- [x] A different experimental evaluation. Temporal. List of POI candidates.
+- [ ] Find a gap. A new contextual POI Recommender.
+
 1. Introduction
  - [ ] Chapter Introduction (need review)
  - [ ] 1.1 Overview
