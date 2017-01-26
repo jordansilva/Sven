@@ -4,7 +4,6 @@ import sys
 import itertools
 import numpy as np
 import matplotlib.pyplot as plt
-from pymongo import MongoClient
 from matplotlib.pyplot import cm
 
 # @Author: @jordansilva
@@ -20,14 +19,6 @@ from matplotlib.pyplot import cm
 # [ Usage ]
 # python stats.py <database>
 #
-
-
-# Initialize Database
-def init(database):
-    global client, db
-    client = MongoClient()
-    db = client[database]
-    return
 
 
 def precision_at(algorithm, path, folds):
