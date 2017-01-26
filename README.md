@@ -3,7 +3,6 @@
 - [x] A different experimental evaluation. Temporal. List of POI candidates.
 - [ ] Find a gap. A new contextual POI Recommender.
 
-A
 
 1. Introduction
  - [ ] Chapter Introduction (need review)
