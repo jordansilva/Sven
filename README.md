@@ -27,11 +27,12 @@
  - [ ] 3.1 Check-ins Dataset (talk about 4sq)
  - [x] 3.1.1 Twitter
  - [x] 3.1.2 Swarm
- - [ ] 3.1.3 Architeture & Tools
- - [ ] 3.2 Data Extension
+ - [ ] 3.2 Context Dataset Enrichment
  - [ ] 3.2.1 Place Collection
- - [ ] 3.3 Considerations
- - [ ] 3.4 Summary
+ - [ ] 3.2.2 Weather Collection
+ - [ ] 3.3 Dataset characterization
+ - [ ] 3.4 Considerations
+ - [ ] 3.5 Summary
 
 4. Experimental Setup
  - [ ] Chapter Introduction
