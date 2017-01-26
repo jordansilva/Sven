@@ -2,7 +2,6 @@
 - [x] A big new collection of POI check-ins, with POIs information, and real check-ins. (Freshly) 
 - [x] A different experimental evaluation. Temporal. List of POI candidates.
 - [ ] Find a gap. A new contextual POI Recommender.
-
 <br/>
 
 1. Introduction
@@ -13,12 +12,15 @@
  - [x] 1.4 Organization
 
 2. Related Work
- - [ ] Chapter Introduction
+ - [x] Chapter Introduction
  - [ ] 2.1 Recommender Systems
- - [ ] 2.2 POI Recommendation
- - [ ] 2.2.1 Context-Agnostic POI Recommenders
- - [ ] 2.2.2 Context-Aware POI Recommenders
- - [x] 2.3 Summary
+ - [ ] 2.2 Context-Aware Recommendation
+ - [ ] 2.3. POI Recommendation
+ - [ ] 2.4. Recommendation Techniques
+ - [ ] 2.4.1 Context-Agnostic Recommenders
+ - [ ] 2.4.2 Context-Aware Recommenders
+ - [ ] 2.5. Evaluation Methodology
+ - [x] 2.6 Summary
 
 3. Point-of-Interest Collection
  - [x] Chapter Introduction
