@@ -16,8 +16,8 @@
  - [x] 2.1 Recommender Systems
  - [ ] 2.1.1 Recommendation Task
  - [ ] 2.1.2 Traditional Recommendation Techniques
- - [ ] 2.1.2.1 Collaborative Filtering
- - [ ] 2.1.2.2 Content-Based
+ - [x] 2.1.2.1 Collaborative Filtering
+ - [x] 2.1.2.2 Content-Based
  - [ ] 2.1.2.3 Knowledge-Based
  - [ ] 2.1.2.4 Demographic-Based
  - [ ] 2.1.2.5 Hybrid
