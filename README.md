@@ -15,7 +15,7 @@
  - [x] Chapter Introduction
  - [x] 2.1 Recommender Systems
  - [ ] 2.1.1 Recommendation Task
- - [ ] 2.1.2 Traditional Recommendation Techniques
+ - [x] 2.1.2 Traditional Recommendation Techniques
  - [x] 2.1.2.1 Collaborative Filtering
  - [x] 2.1.2.2 Content-Based
  - [ ] 2.1.2.3 Knowledge-Based
