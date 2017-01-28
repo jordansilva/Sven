@@ -13,7 +13,14 @@
 
 2. Related Work
  - [x] Chapter Introduction
- - [ ] 2.1 Recommender Systems
+ - [x] 2.1 Recommender Systems
+ - [ ] 2.1.1 Recommendation Task
+ - [ ] 2.1.2 Traditional Recommendation Techniques
+ - [ ] 2.1.2.1 Collaborative Filtering
+ - [ ] 2.1.2.2 Content-Based
+ - [ ] 2.1.2.3 Knowledge-Based
+ - [ ] 2.1.2.4 Demographic-Based
+ - [ ] 2.1.2.5 Hybrid
  - [ ] 2.2 Context-Aware Recommendation
  - [ ] 2.3. POI Recommendation
  - [ ] 2.4. Recommendation Techniques
@@ -24,7 +31,7 @@
 
 3. Point-of-Interest Collection
  - [x] Chapter Introduction
- - [ ] 3.1 Check-ins Dataset (talk about 4sq)
+ - [x] 3.1 Check-ins Dataset (talk about 4sq)
  - [x] 3.1.1 Twitter
  - [x] 3.1.2 Swarm
  - [ ] 3.2 Context Dataset Enrichment
