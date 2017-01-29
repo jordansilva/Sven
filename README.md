@@ -18,9 +18,9 @@
  - [x] 2.1.2 Traditional Recommendation Techniques
  - [x] 2.1.2.1 Collaborative Filtering
  - [x] 2.1.2.2 Content-Based
- - [ ] 2.1.2.3 Knowledge-Based
- - [ ] 2.1.2.4 Demographic-Based
- - [ ] 2.1.2.5 Hybrid
+ - [x] 2.1.2.3 Knowledge-Based
+ - [x] 2.1.2.4 Demographic-Based
+ - [x] 2.1.2.5 Hybrid
  - [ ] 2.2 Context-Aware Recommendation
  - [ ] 2.3. POI Recommendation
  - [ ] 2.4. Recommendation Techniques
