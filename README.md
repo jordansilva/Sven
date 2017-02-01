@@ -21,7 +21,7 @@
  - [x] 2.1.2.3 Knowledge-Based
  - [x] 2.1.2.4 Demographic-Based
  - [x] 2.1.2.5 Hybrid
- - [ ] 2.2 Context-Aware Recommendation
+ - [x] 2.2 Context-Aware Recommendation
  - [ ] 2.3. POI Recommendation
  - [ ] 2.4. Recommendation Techniques
  - [ ] 2.4.1 Context-Agnostic Recommenders
