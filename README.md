@@ -21,7 +21,7 @@
  - [x] 2.1.2.3 Knowledge-Based
  - [x] 2.1.2.4 Demographic-Based
  - [x] 2.1.2.5 Hybrid
- - [x] 2.2 Context-Aware Recommendation
+ - [ ] 2.2 Context-Aware Recommendation
  - [ ] 2.3. POI Recommendation
  - [ ] 2.4. Recommendation Techniques
  - [ ] 2.4.1 Context-Agnostic Recommenders
@@ -34,7 +34,7 @@
  - [x] 3.1 Check-ins Dataset (talk about 4sq)
  - [x] 3.1.1 Twitter
  - [x] 3.1.2 Swarm
- - [ ] 3.2 Context Dataset Enrichment
+ - [x] 3.2 Context Dataset Enrichment
  - [ ] 3.2.1 Place Collection
  - [ ] 3.2.2 Weather Collection
  - [ ] 3.3 Dataset characterization
